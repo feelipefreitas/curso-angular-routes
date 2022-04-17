@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-clients',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ClientsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
   }
 
+  redirectRelative() {
+    this._router.navigate(['about'], { relativeTo: this._activatedRoute });
+  }
+
+  redirectAbsolute() {
+    this._router.navigate(['/about']);
+  }
 }
