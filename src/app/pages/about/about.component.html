@@ -7,3 +7,11 @@
 <div>
     <a routerLink="/teste">Caminho Absoluto</a>
 </div>
+
+<div>
+    <a [routerLink]="['/clients', 1]">Redirect Clients com Id</a>
+</div>
+
+<div>
+    <button (click)="redirectToClientsWithId()">Redirect Clients com Id</button>
+</div>

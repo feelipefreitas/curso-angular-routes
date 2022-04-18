@@ -11,6 +11,11 @@ export class ClientsComponent implements OnInit {
   constructor(private _router: Router, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
+    console.log('Params snapshot ', this._activatedRoute.snapshot.params.id);
+
+    this._activatedRoute.params.subscribe((params) => {
+      console.log('Params subscribe ', params);
+    });
   }
 
   redirectRelative() {
