@@ -16,4 +16,8 @@ export class AboutComponent implements OnInit {
   redirectToClientsWithId() {
     this._router.navigate(['/clients', 1]);
   }
+
+  redirectToClientsWithObj() {
+    this._router.navigate(['/clients', { id: 1 }]);
+  }
 }

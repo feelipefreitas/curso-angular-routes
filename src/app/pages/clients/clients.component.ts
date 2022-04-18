@@ -16,6 +16,14 @@ export class ClientsComponent implements OnInit {
     this._activatedRoute.params.subscribe((params) => {
       console.log('Params subscribe ', params);
     });
+
+    console.log('==============================================');
+
+    console.log('ParamMap snapshot', this._activatedRoute.snapshot.paramMap.has('id'));
+
+    this._activatedRoute.paramMap.subscribe((params) => {
+      console.log('ParamMap subscribe', params.get('id'));
+    });
   }
 
   redirectRelative() {
