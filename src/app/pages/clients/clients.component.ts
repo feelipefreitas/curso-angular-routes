@@ -11,19 +11,19 @@ export class ClientsComponent implements OnInit {
   constructor(private _router: Router, private _activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    console.log('Params snapshot ', this._activatedRoute.snapshot.params.id);
-
-    this._activatedRoute.params.subscribe((params) => {
-      console.log('Params subscribe ', params);
-    });
+    this.initializeParams();
 
     console.log('==============================================');
 
-    console.log('ParamMap snapshot', this._activatedRoute.snapshot.paramMap.has('id'));
+    this.initializeParamMap();
 
-    this._activatedRoute.paramMap.subscribe((params) => {
-      console.log('ParamMap subscribe', params.get('id'));
-    });
+    console.log('==============================================');
+
+    this.initializeFragment();
+
+    console.log('==============================================');
+
+    this.initializeQueryParams();
   }
 
   redirectRelative() {
@@ -32,5 +32,39 @@ export class ClientsComponent implements OnInit {
 
   redirectAbsolute() {
     this._router.navigate(['/about']);
+  }
+
+  private initializeParams() {
+    console.log('Params snapshot ', this._activatedRoute.snapshot.params.id);
+
+    this._activatedRoute.params.subscribe((params) => {
+      console.log('Params subscribe ', params);
+    });
+  }
+
+  private initializeParamMap() {
+    console.log('ParamMap snapshot', this._activatedRoute.snapshot.paramMap.has('id'));
+
+    this._activatedRoute.paramMap.subscribe((params) => {
+      console.log('ParamMap subscribe', params.get('id'));
+    });
+  }
+
+  private initializeFragment() {
+    console.log('Fragment snapshot', this._activatedRoute.snapshot.fragment);
+
+    this._activatedRoute.fragment.subscribe((fragment) => {
+      console.log('Fragment subscribe', fragment)
+    });
+  }
+
+  private initializeQueryParams() {
+    console.log('Query Params snapshot', this._activatedRoute.snapshot.queryParams);
+
+    this._activatedRoute.queryParams.subscribe((queryParams) => {
+      console.log('Query Params subscribe', queryParams);
+    });
+
+    console.log(this._activatedRoute.snapshot.queryParamMap.has('age'));
   }
 }

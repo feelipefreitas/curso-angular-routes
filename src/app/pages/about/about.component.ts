@@ -20,4 +20,19 @@ export class AboutComponent implements OnInit {
   redirectToClientsWithObj() {
     this._router.navigate(['/clients', { id: 1 }]);
   }
+
+  redirectToClientsWithFragment() {
+    this._router.navigate(['/clients'], {
+      fragment: 'editMode'
+    });
+  }
+
+  redirectToClientsWithQueryParams() {
+    this._router.navigate(['/clients'], {
+      queryParams: {
+        id: 1,
+        name: 'Felipe'
+      }
+    });
+  }
 }

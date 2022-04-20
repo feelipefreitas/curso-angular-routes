@@ -19,3 +19,19 @@
 <div>
     <button (click)="redirectToClientsWithObj()">Redirect Clients com Objeto</button>
 </div>
+
+<div>
+    <a routerLink="/clients" [fragment]="'editMode'">Redirect Clients com Fragmento</a>
+</div>
+
+<div>
+    <button (click)="redirectToClientsWithFragment()">Redirect Clients com Fragmento</button>
+</div>
+
+<div>
+    <a routerLink="/clients" [queryParams]="{ id: 1, name: 'Felipe' }">Redirect Clients com Query Params</a>
+</div>
+
+<div>
+    <button (click)="redirectToClientsWithQueryParams()">Redirect Clients com Query Params</button>
+</div>
