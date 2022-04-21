@@ -34,6 +34,10 @@ export class ClientsComponent implements OnInit {
     this._router.navigate(['/about']);
   }
 
+  redirectToChildComp() {
+    this._router.navigate([1], { relativeTo: this._activatedRoute });
+  }
+
   private initializeParams() {
     console.log('Params snapshot ', this._activatedRoute.snapshot.params.id);
 

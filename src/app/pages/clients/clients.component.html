@@ -19,3 +19,11 @@
 <div>
     <a [routerLink]="['/clients', 2]">Redirect com Id 2</a>
 </div>
+
+<h2>Componente Filho:</h2>
+
+<div>
+    <button (click)="redirectToChildComp()">Redirect para Comp Filho</button>
+</div>
+
+<router-outlet></router-outlet>
